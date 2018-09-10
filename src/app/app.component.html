@@ -2,4 +2,8 @@
   <h2>Comments</h2>
   <app-comment-list [comments]="comments" (onShowComment)="onShowComment($event)">
   </app-comment-list>
+  <h2>Counter</h2>
+  <app-counter #counter></app-counter>
+  <button (click)="counter.increment()">++</button>
+  <button (click)="counter.decrement()">--</button>
 </div>
