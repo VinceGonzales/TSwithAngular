@@ -12,4 +12,8 @@ export class AppComponent {
   { author: 'William', content: 'Yeah, right!' },
   { author: 'Raphael', content: 'Got stuck passing data around'}
   ];
+
+  onShowComment(comment) {
+  	console.log(comment.content);
+  }
 }

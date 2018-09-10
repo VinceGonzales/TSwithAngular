@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, EventEmitter, Output } from '@angular/core';
 
 @Component({
   selector: 'app-comment-list',
@@ -9,6 +9,13 @@ export class CommentListComponent implements OnInit {
 	// Received via Inputs
 	@Input()
 	comments;
+	@Output()
+	onShowComment = new EventEmitter();
+
 	constructor() { }
 	ngOnInit() { }
+
+	showComment(comment) {
+		this.onShowComment.emit(comment);
+	}
 }

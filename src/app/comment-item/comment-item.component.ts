@@ -6,9 +6,18 @@ import { Component, OnInit, Input } from '@angular/core';
   styleUrls: ['./comment-item.component.css']
 })
 export class CommentItemComponent implements OnInit {
+	private _comment
+
 	// Decorated comment
 	@Input()
-	comment;
+	set comment(comment) {
+		this._comment = Object.assign(comment, {
+			author: comment.author.toUpperCase()
+		});
+	}
+	get comment() {
+		return this._comment;
+	}
 
 	constructor() { }
 	ngOnInit() {
