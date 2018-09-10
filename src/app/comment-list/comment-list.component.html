@@ -1,5 +1,6 @@
-<app-comment-item *ngFor="let comment of comments" 
-[comment]="comment"
-(dblclick)="showComment(comment)"
->
-</app-comment-item>
+<div class="list-group">
+	<a href="#" class="list-group-item" *ngFor="let comment of comments">
+		<h4 class="list-group-item-heading">{{comment.author}}</h4>
+		<p class="list-group-item-text">{{comment.content}}</p>
+	</a>
+</div>

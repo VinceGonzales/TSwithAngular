@@ -1,4 +1,4 @@
-import { Component, OnInit, Input, EventEmitter, Output } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-comment-list',
@@ -6,16 +6,14 @@ import { Component, OnInit, Input, EventEmitter, Output } from '@angular/core';
   styleUrls: ['./comment-list.component.css']
 })
 export class CommentListComponent implements OnInit {
-	// Received via Inputs
-	@Input()
-	comments;
-	@Output()
-	onShowComment = new EventEmitter();
+	comments: Array<any>;
 
 	constructor() { }
-	ngOnInit() { }
-
-	showComment(comment) {
-		this.onShowComment.emit(comment);
+	ngOnInit() {
+		this.comments = [
+			{ author: 'solomon', content: 'TypeScript + Angular is amazing' },
+			{ author: 'lorna', content: 'TypeScript is really awesome'},
+			{ author: 'codebeast', content: 'I am new to TypeScript'}
+		];
 	}
 }
