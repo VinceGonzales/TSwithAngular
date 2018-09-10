@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { CommentService } from '../comment.service';
 
 @Component({
   selector: 'app-comment-list',
@@ -6,14 +7,14 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./comment-list.component.css']
 })
 export class CommentListComponent implements OnInit {
-	comments: Array<any>;
+	private comments: Array<any>;
 
-	constructor() { }
+	constructor(private commentService: CommentService) { }
 	ngOnInit() {
-		this.comments = [
-			{ author: 'solomon', content: 'TypeScript + Angular is amazing' },
-			{ author: 'lorna', content: 'TypeScript is really awesome'},
-			{ author: 'codebeast', content: 'I am new to TypeScript'}
-		];
+		this.comments = this.commentService.getComments();
+	}
+
+	removeComment(comment) {
+		this.comments = this.commentService.removeComment(comment);
 	}
 }

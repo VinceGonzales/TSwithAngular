@@ -1,5 +1,7 @@
 <div class="list-group">
-	<a href="#" class="list-group-item" *ngFor="let comment of comments">
+	<a href="#" class="list-group-item" 
+	(dblclick)="removeComment(comment)"
+	*ngFor="let comment of comments">
 		<h4 class="list-group-item-heading">{{comment.author}}</h4>
 		<p class="list-group-item-text">{{comment.content}}</p>
 	</a>
