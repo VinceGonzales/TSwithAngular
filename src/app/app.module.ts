@@ -4,11 +4,13 @@ import { NgModule } from '@angular/core';
 import { AppComponent } from './app.component';
 import { CommentListComponent } from './comment-list/comment-list.component';
 import { CommentService } from './comment.service';
+import { CommentDetailComponent } from './comment-detail/comment-detail.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    CommentListComponent
+    CommentListComponent,
+    CommentDetailComponent
   ],
   imports: [
     BrowserModule

@@ -1,7 +1,11 @@
 import { Injectable } from '@angular/core';
+import { Subject } from 'rxjs';
 
 @Injectable()
 export class CommentService {
+	private commentSelectedSource = new Subject<any>();
+	public commentSelected$ = this.commentSelectedSource.asObservable();
+	
 	private comments: Array<any> = [
 	{
 		author: 'solomon',
@@ -27,5 +31,8 @@ export class CommentService {
 		this.comments.splice(index, 1);
 		// return the new array
 		return this.comments;
+	}
+	showComment(comment) {
+		this.commentSelectedSource.next(comment);
 	}
 }

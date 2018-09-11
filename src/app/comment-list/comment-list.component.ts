@@ -17,4 +17,7 @@ export class CommentListComponent implements OnInit {
 	removeComment(comment) {
 		this.comments = this.commentService.removeComment(comment);
 	}
+	showComment(comment) {
+		this.commentService.showComment(comment);
+	}
 }
