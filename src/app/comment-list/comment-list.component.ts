@@ -20,4 +20,9 @@ export class CommentListComponent implements OnInit {
 	showComment(comment) {
 		this.commentService.showComment(comment);
 	}
+	showPrompt() {
+		const commentString = window.prompt('Please enter your username and content: ', 'username: content');
+		const parsedComment = this.commentService.parseComment(commentString);
+		this.commentService.addComment(parsedComment);
+	}
 }

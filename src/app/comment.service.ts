@@ -35,4 +35,15 @@ export class CommentService {
 	showComment(comment) {
 		this.commentSelectedSource.next(comment);
 	}
+	parseComment(commentString) {
+		const commentArr = commentString.split(':');
+		const comment = {
+			author: commentArr[0].trim(),
+			content: commentArr[1].trim()
+		}
+		return comment;
+	}
+	addComment(comment) {
+		this.comments.unshift(comment);
+	}
 }
