@@ -1,20 +1,19 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
+import { FormsModule } from '@angular/forms';
+
 import { AppComponent } from './app.component';
-import { CommentListComponent } from './comment-list/comment-list.component';
-import { CommentItemComponent } from './comment-item/comment-item.component';
-import { CounterComponent } from './counter/counter.component';
+import { FlightFormComponent } from './flight-form/flight-form.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    CommentListComponent,
-    CommentItemComponent,
-    CounterComponent
+    FlightFormComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
