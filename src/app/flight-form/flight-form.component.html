@@ -4,4 +4,37 @@
 		<input type="text" class="form-control" [(ngModel)]="flightModel.fullName" name="fullName" />
 		{{flightModel.fullName}}
 	</div>
+	<div class="row">
+		<div class="col-md-6">
+			<label for="from">From</label>
+			<select id="from" name="from" class="form-control" [(ngModel)]="flightModel.from">
+				<option *ngFor="let city of cities" value="{{city}}">{{city}}</option>
+			</select>
+		</div>
+		<div class="col-md-6">
+			<label for="to">To</label>
+			<select id="to" name="to" class="form-control" [(ngModel)]="flightModel.to">
+				<option *ngFor="let city of cities" value="{{city}}">{{city}}</option>
+			</select>
+		</div>
+	</div>
+	<div class="row" style="margin-top: 15px">
+		<div class="col-md-4">
+			<label for="" style="display: block">Trip Type</label>
+			<label class="radio-inline">
+				<input type="radio" name="type" [(ngModel)]="flightModel.type" value="One Way" /> One way
+			</label>
+			<label class="radio-inline">
+				<input type="radio" name="type" [(ngModel)]="flightModel.type" value="Return" /> Return
+			</label>
+		</div>
+		<div class="col-md-4">
+			<label for="departure">Departure</label>
+			<input type="date" id="departure" name="departure" class="form-control" [(ngModel)]="flightModel.departure" />
+		</div>
+		<div class="col-md-4">
+			<label for="arrival">Arrival</label>
+			<input type="date" id="arrival" name="arrival" class="form-control" [(ngModel)]="flightModel.arrival" />
+		</div>
+	</div>
 </form>
