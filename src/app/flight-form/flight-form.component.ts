@@ -15,4 +15,8 @@ export class FlightFormComponent implements OnInit {
 		this.flightModel = new Flight('','','','',0,new Date(),0,0,new Date());
 	}
 	ngOnInit() { }
+
+	handleSubmit() {
+		console.log(this.flightModel);
+	}
 }
