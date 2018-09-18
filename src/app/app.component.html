@@ -1,3 +1,8 @@
-<div>
-  <h2>Angular</h2>
+<div class="container">
+  <div class="row">
+  	<div class="col-md-6">
+  		<h3 *appWhen="toggle">Angular Rocks!</h3>
+  		<button appUiButton (click)="updateToggle()">Click!!</button>
+  	</div>
+  </div>
 </div>
