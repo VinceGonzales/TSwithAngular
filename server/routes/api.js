@@ -1,8 +1,7 @@
 const express = require('express');
 const router = express.Router();
 var mongojs = require('mongojs');
-var db = mongojs('mongodb://vgonzales:Ladbs123!@10.8.3.86/test',['heroes']);
-/* GET api listing. */
+var db = mongojs('mongodb://username:password@10.8.3.86/test',['heroes']);
 
 router.get('/', (req, res) => {
     res.send('api works');
