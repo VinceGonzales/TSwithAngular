@@ -1,3 +1,10 @@
 <div>
   <h2>{{pageTitle}}</h2>
 </div>
+<div>
+	<ul *ngIf="heroes.length>0">
+		<li *ngFor="let hero of heroes" style="list-style: none">
+			<span>{{hero.Name}}</span>
+		</li>
+	</ul>
+</div>
