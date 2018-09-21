@@ -14,7 +14,7 @@ export class AppComponent implements OnInit {
 	ngOnInit() {
 		this.heroes = [];
 		this.heroService.getAllHero().subscribe(heroes => {
-			console.log(heroes);
+			this.heroes = <Hero[]>heroes;
 		});
 	}
 }
