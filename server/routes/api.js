@@ -1,7 +1,7 @@
 const express = require('express');
 const router = express.Router();
 var mongojs = require('mongojs');
-var db = mongojs('mongodb://username:password@10.8.3.86/test',['heroes']);
+var db = mongojs('mongodb://vgonzales:Ladbs123!@10.8.3.86/test',['heroes']);
 
 router.get('/', (req, res, next) => {
     res.send('api works');
@@ -14,6 +14,16 @@ router.get('/heroes', function(req, res, next) {
            res.send(err);
         } else {
            res.json(hero);
+        }
+    });
+});
+
+router.get('/schematics', function(req, res, next) {
+    db.schematics.find(function(err, schem) {
+        if(err) {
+            res.send(err);
+        } else {
+            res.json(schem);
         }
     });
 });

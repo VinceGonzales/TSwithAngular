@@ -1,0 +1,15 @@
+<div class="row">
+	<div class="col-md-6">
+		<h3>{{pageTitle}}</h3>
+	</div>
+</div>
+<div class="row">
+	<div class="col-md-12">
+		<div class="panel panel-info" *ngFor="let hero of heroes">
+			<div class="panel-heading">
+				<h4 class="panel-title">{{hero.Rarity | uppercase}}</h4>
+			</div>
+			<div class="panel-body">{{hero.Name}}</div>
+		</div>
+	</div>
+</div>
